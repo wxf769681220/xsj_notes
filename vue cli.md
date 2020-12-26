@@ -2,7 +2,9 @@
 **vue serve**
 **vue build**
 **vue add**
+- 如果你想在一个已经被创建好的项目中安装一个插件，可以使用 vue add 命令：
 **vue ui** 
+- 通过 vue ui 命令使用 GUI 运行更多的特性脚本。
 **vue-cli-service serve [options] [entry]**
 选项：
 	--mode    指定环境模式 (默认值：development)
@@ -35,3 +37,19 @@
 
 ## vue.config.js
 1. devServer 字段配置开发服务器
+
+## HMTL 和 静态资源
+**html-webpack-plugin** 
+htmlWebpackPlugin.options.[options]
+选项：
+	title: 'Webpack App'（默认）
+	filename: 'index.html'（默认）
+	
+- public/index.html 文件是一个会被 html-webpack-plugin 处理的模板。在构建过程中，资源链接会被自动注入。（preload/prefetch            manifest 和图标链接  JavaScript 和 CSS 文件的资源链接）
+- index 文件被用作模板，所以你可以使用 lodash template 语法插入内容：
+	<%= VALUE %> 用来做不转义插值；
+	<%- VALUE %> 用来做 HTML 转义插值；
+	<% expression %> 用来描述 JavaScript 流程控制。
+	
+
+                        
