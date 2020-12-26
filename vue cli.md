@@ -42,9 +42,11 @@
 **html-webpack-plugin** 
 htmlWebpackPlugin.options.[options]
 选项：
-	title: 'Webpack App'（默认）
-	filename: 'index.html'（默认）
-	
+	title: 'Webpack App'（默认）用于生成的HTML文档的标题
+	filename: 'index.html'（默认） 
+	template:  ''  C:\Users\Admin\Desktop\chegao\node_modules\html-webpack- plugin\lib\loader.js!C:\Users\Admin\Deskto p\chegao \public\index.html  
+	publicPath: 用于脚本和链接标签的 publicPath
+	hash：false（默认）如果是，true则将唯一的webpack编译哈希值附加到所有包含的脚本和CSS文件中。这对于清除缓存很有用。
 - public/index.html 文件是一个会被 html-webpack-plugin 处理的模板。在构建过程中，资源链接会被自动注入。（preload/prefetch            manifest 和图标链接  JavaScript 和 CSS 文件的资源链接）
 - index 文件被用作模板，所以你可以使用 lodash template 语法插入内容：
 	<%= VALUE %> 用来做不转义插值；
