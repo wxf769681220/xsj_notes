@@ -1,6 +1,7 @@
 ## 使用命令1
 **vue serve**
 **vue build**
+**vue create --help**
 **vue add**
 - 如果你想在一个已经被创建好的项目中安装一个插件，可以使用 vue add 命令：
 **vue ui** 
@@ -33,7 +34,19 @@
 ## 插件
 - Vue CLI 使用了一套基于插件的架构。如果你查阅一个新创建项目的 package.json，就会发现依赖都是以 @vue/cli-plugin- 开头的。
   插件可以修改 webpack 的内部配置，也可以向 vue-cli-service 注入命令。在项目创建的过程中，绝大部分列出的特性都是通过插件来     实现的。 
-- 如果出于一些原因你的插件列在了该项目之外的其它 package.json 文件里，你可以在自己项目的 package.json 里设置  vuePlugins.resolveFrom 选项指向包含其它 package.json 的文件夹。
+- 
+- 如果出于一些原因你的插件列在了该项目之外的其它 package.json 文件里，你可以在自己项目的 package.json 里设置  vuePlugins.resolveFrom 选项指向包含其它 package.json 的文件夹。如果你有一个 .config/package.json 文件：
+{
+  "vuePlugins": {
+    "resolveFrom": ".config"
+  }
+}
+- 如果你需要在项目里直接访问插件 API 而不需要创建一个完整的插件，你可以在 package.json 文件中使用 vuePlugins.service 选项：
+{
+  "vuePlugins": {
+    "service": ["my-commands.js"]
+  }
+}
 
 ## vue.config.js
 1. devServer 字段配置开发服务器
@@ -52,6 +65,13 @@ htmlWebpackPlugin.options.[options]
 	<%= VALUE %> 用来做不转义插值；
 	<%- VALUE %> 用来做 HTML 转义插值；
 	<% expression %> 用来描述 JavaScript 流程控制。
+**静态资源导入方式**
+- 在 JavaScript 被导入或在 template/CSS 中通过相对路径被引用。这类引用会被 webpack 处理。(必须以 . 开头) 
+- 
+- 放置在 public 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处
+
+
+
 	
 
                         
