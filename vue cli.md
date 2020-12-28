@@ -66,9 +66,9 @@ htmlWebpackPlugin.options.[options]
 	<%- VALUE %> 用来做 HTML 转义插值；
 	<% expression %> 用来描述 JavaScript 流程控制。
 **静态资源导入方式**
-- 在 JavaScript 被导入或在 template/CSS 中通过相对路径被引用。这类引用会被 webpack 处理。(必须以 . 开头) 
-- 
-- 放置在 public 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处
+
+- 在 JavaScript 被导入或在 template/CSS 中通过相对路径(必须以 . 开头) 被引用。这类引用会被 webpack 处理。
+- 放置在 public 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处理。
 
 
 
