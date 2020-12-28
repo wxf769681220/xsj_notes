@@ -67,7 +67,7 @@ htmlWebpackPlugin.options.[options]
 	<% expression %> 用来描述 JavaScript 流程控制。
 **静态资源导入方式**
 
-- 在 JavaScript 被导入或在 template/CSS 中通过相对路径(必须以 . 开头) 被引用。这类引用会被 webpack 处理。
+- 在 JavaScript 被导入或在 template/CSS 中通过相对路径(必须以 . 开头) 被引用。这类引用会被 webpack 处理。该资源将会被包含进入 webpack 的依赖图中。在其编译过程中，所有诸如 <img src="...">、background: url(...) 和 CSS @import 的资源 URL 都会被解析为一个模块依赖。如：url(./image.png) 会被翻译为 require('./image.png')
 - 放置在 public 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处理。
 
 
